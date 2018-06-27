@@ -1,2 +1,2 @@
-# Tomoki
-Tomoki's plugin repository
+# Tomoki Kyotani
+This is the Tomoki's plugin repository.
