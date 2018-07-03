@@ -1,0 +1,34 @@
+{
+    "manifest_version": 1,
+    "version": 1,
+    "type": "APP",
+    "name": {
+        "ja": "Character Count",
+        "en": "Character Count with Text Area",
+        "zh": "Character Count"
+    },
+    "description": {
+        "ja": "Character Count",
+        "en": "Character Count with Text Area",
+        "zh": "Character Count"
+    },
+    "icon": "image/icon.jpeg",
+    "desktop": {
+        "js": [
+            "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
+            "https://dl.dropbox.com/s/jb9kyvh2i30gpln/CharCount.js"
+        ]
+    },
+    "config": {
+        "html": "html/config.html",
+        "js": [
+            "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
+            "https://js.cybozu.com/jsrender/0.9.86/jsrender.min.js",
+            "https://dl.dropbox.com/s/jy50v7frjik0s27/config.js"
+        ],
+        "css": [
+            "css/config.css",
+            "css/51-current-default.css"
+        ]
+    }
+}
