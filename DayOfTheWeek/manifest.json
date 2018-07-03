@@ -1,0 +1,37 @@
+{
+    "manifest_version": 1,
+    "version": 1,
+    "type": "APP",
+    "name": {
+        "ja": "曜日名表示プラグイン",
+        "en": "Day of the Week"
+    },
+    "description": {
+        "ja": "日付をインプットとして取り、その曜日を表示するプラグインです。",
+        "en": "Day-of-the-week plugin figures out the day of the week from the date input."
+    },
+    "icon": "image/icon.jpeg",
+    "desktop": {
+        "js": [
+            "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
+            "https://momentjs.com/downloads/moment.min.js",
+            "js/DayOfWeek.js"
+        ]
+    },
+    "config": {
+        "html": "html/config.html",
+        "js": [
+            "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
+            "https://js.cybozu.com/jsrender/0.9.86/jsrender.min.js",
+            "js/config.js"
+        ],
+        "css": [
+            "css/config.css",
+            "css/51-current-default.css"
+        ],
+        "required_params": [
+            "dateField",
+            "dayField"
+        ]
+    }
+}
