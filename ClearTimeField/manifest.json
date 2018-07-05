@@ -1,0 +1,20 @@
+{
+    "manifest_version": 1,
+    "version": 1,
+    "type": "APP",
+    "name": {
+        "ja": "Clear Time Fieldプラグイン。",
+        "en": "Clear Time Field Plugin"
+    },
+    "description": {
+        "ja": "The delete key will clear the content of the time field.",
+        "en": "The delete key will clear the content of the time field."
+    },
+    "icon": "image/icon.jpeg",
+    "desktop": {
+        "js": [
+            "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+            "js/Desktop.js"
+        ]
+    }
+}
