@@ -16,7 +16,7 @@
     "desktop": {
         "js": [
             "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
-            "https://dl.dropbox.com/s/jb9kyvh2i30gpln/CharCount.js"
+            "js/CharCount.js"
         ]
     },
     "config": {
@@ -24,7 +24,7 @@
         "js": [
             "https://js.cybozu.com/jquery/2.2.4/jquery.min.js",
             "https://js.cybozu.com/jsrender/0.9.86/jsrender.min.js",
-            "https://dl.dropbox.com/s/jy50v7frjik0s27/config.js"
+            "js/config.js"
         ],
         "css": [
             "css/config.css",
