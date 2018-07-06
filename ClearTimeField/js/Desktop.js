@@ -1,9 +1,14 @@
-(function($){
+(function(){
+    var timeFields = [];
     kintone.events.on(['app.record.create.show', 'app.record.edit.show', 'app.record.index.edit.show'], function(event) {
-        $(".input-time-text-cybozu").keyup(function(e){
-            if(e.keyCode === 8) {
-                e.currentTarget.value = "";
-            }
+        timeFields = Array.from(document.getElementsByClassName("input-time-text-cybozu"));
+
+        timeFields.forEach(function(element){
+            element.onkeyup = function(e){
+                if(e.keyCode === 8) {
+                    e.target.value = "";
+                }
+            }   
         });
     });
-})(jQuery);
+})();
