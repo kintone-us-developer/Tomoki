@@ -41,37 +41,47 @@ jQuery.noConflict();
         countFieldArray = Array.from(document.getElementsByClassName("input-text-cybozu input-number-cybozu"));
         countFieldArray[setCountFieldIndex].disabled = true;
 
-        $(".textarea-cybozu").keyup(function(e){
-            var text = textFieldArray[setTextFieldIndex].value;
+        textFieldArray[setTextFieldIndex].onkeyup = function(e){
+            var text = e.target.value;
             var match = text.match(regex);
             var length = match.join('').length;
 
             countFieldArray[setCountFieldIndex].value = length;
-            //event['record'][countFieldCode]['value'] doesn't work 
-                //because I have to return event after this keyup fired(Asynchronous behavior)
-        });
+        };
     })
 
     kintone.events.on('app.record.index.show', function(event){
-        //getting the unique part "value..." from the class name of set fields
+        //Get the unique part "value..." from the class names of user-set fields.
+        //Use these variables to get the elements of user-set fields in the index record edit page
         setTextFieldClassName = kintone.app.getFieldElements(textFieldCode)[0].className.slice(56);
         setCountFieldClassName = kintone.app.getFieldElements(countFieldCode)[0].className.slice(45);
     })
 
     kintone.events.on('app.record.index.edit.show', function(event){
-        //These elements don't include the value like texts/nuymbers
+        //These arrays contain just the elements of user-set fields being editted.
         textFieldArray = Array.from(document.getElementsByClassName("recordlist-editcell-gaia recordlist-edit-multiple_line_text-gaia " + setTextFieldClassName));
         countFieldArray = Array.from(document.getElementsByClassName("recordlist-editcell-gaia recordlist-edit-decimal-gaia " + setCountFieldClassName));
 
         countFieldArray[0].children[0].children[0].children[1].children[0].disabled = true;
-    
-        $("." + setTextFieldClassName).keyup(function(e){
-            //This property holds the value
-            var text = textFieldArray[0].children[0].children[0].value;
+
+        textFieldArray[0].onkeyup = function(e){
+            console.log("hey");
+            var text = e.target.value;
             var match = text.match(regex);
             var length = match.join('').length;
 
-            countFieldArray[0].children[0].children[0].children[1].children[0].value = length;
-        });
+            countFieldArray[0].children[0].children[0].children[1].children[0].value = length
+        };
+
+        //This recognizes just the user-set text field too since "setTextFieldClassName" is unique to that field
+            //and keyup is triggered only on the field that is being editted
+        // $("." + setTextFieldClassName).keyup(function(e){
+        //     //This property holds the value
+        //     var text = textFieldArray[0].children[0].children[0].value;
+        //     var match = text.match(regex);
+        //     var length = match.join('').length;
+        //
+        //     countFieldArray[0].children[0].children[0].children[1].children[0].value = length;
+        // });
     })
 })(jQuery, kintone.$PLUGIN_ID);
