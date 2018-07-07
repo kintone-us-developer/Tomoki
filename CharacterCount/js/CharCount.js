@@ -49,7 +49,7 @@ jQuery.noConflict();
     kintone.events.on('app.record.index.show', function(event){
         //Get the unique part "value..." from the class names of user-set fields.
         //Use these variables to get the elements of user-set fields in the index record edit page
-        setTextFieldClassName = kintone.app.getFieldElements(textFieldCode)[0].className.slice(56);
+        setTextFieldClassName = kintone.app.getFieldElements(textFieldCode)[0].className.slice(56); //regex: "value..."
         setCountFieldClassName = kintone.app.getFieldElements(countFieldCode)[0].className.slice(45);
     })
 
